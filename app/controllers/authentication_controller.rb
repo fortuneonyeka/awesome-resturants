@@ -5,7 +5,7 @@ class AuthenticationController < ApplicationController
     def authenticate
       auth_token =
         AuthenticateUser.new(auth_params[:name], auth_params[:password_digest]).call
-      json_response(auth_token: auth_token)
+      render json: {auth_token: auth_token}, status: 200
     end
   
     private
@@ -13,4 +13,5 @@ class AuthenticationController < ApplicationController
     def auth_params
       params.permit(:name, :password_digest)
     end
-  end
+
+end
