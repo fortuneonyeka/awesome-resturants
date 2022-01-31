@@ -5,7 +5,7 @@ class V1::UsersController < ActionController::Base
         @user = User.new(user_params)
         if @user.valid? 
             @user.save
-            auth_token = AuthenticateUser.new(user.email, user.password).call
+            auth_token = AuthenticateUser.new(user.name, user.password_digest).call
             response = { message: Message.account_created, auth_token: auth_token }
             render json: response, status: 200
         else
