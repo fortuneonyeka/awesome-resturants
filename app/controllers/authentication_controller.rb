@@ -5,13 +5,13 @@ class AuthenticationController < ApplicationController
     def authenticate
       auth_token =
         AuthenticateUser.new(auth_params[:name], auth_params[:password_digest]).call
-      render json: {auth_token: auth_token}, status: 200
+      render json: {message: 'Successfully signed up',auth_token: auth_token}, status: 200
     end
   
     private
   
     def auth_params
-      params.permit(:name, :password_digest)
+      params.require(:user).permit(:name, :password_digest)
     end
 
 end
