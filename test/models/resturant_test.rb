@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ReservationTest < ActiveSupport::TestCase
+class ResturantTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
