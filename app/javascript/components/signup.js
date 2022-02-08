@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { createUserFail, requestSignUp } from '../Redux/users/usersReducer';
 import './form.css';
 
@@ -7,6 +7,9 @@ const SignUp = () => {
     const [pass, setPass] = useState('');
     const [name, setName] = useState('');
     const [confirm, setConfirm] = useState('');
+
+    const { auth } = useSelector(store => store.usersReducer);
+    if(auth){window.location.href = "/test";}
     const dispatch = useDispatch();
     const handleName = (e) => {
         e.stopPropagation();
