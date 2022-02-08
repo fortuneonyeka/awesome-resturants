@@ -37,11 +37,11 @@ export default (state = initialState, action) => {
 }
 
 //actions creators
-export const loadReservation = () => async(dispatch) =>{
+export const loadReservation = (auth) => async(dispatch) =>{
   const response = fetch(URL, {
     method: 'GET',
     headers: {
-      Authorization: `Bearer ${localStorage.token}`,
+      Authorization: `Bearer ${auth}`,
       Accept: 'application/json',
     },
   })

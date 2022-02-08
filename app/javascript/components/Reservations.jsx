@@ -4,9 +4,10 @@ import { loadReservation } from '../Redux/Reservations';
 
 const Reservations = () => {
   const dispatch = useDispatch();
+  const {auth} = useSelector((state => state.usersReducer))
   const { reservations } = useSelector((state => state.reservationReducer));
   useEffect(() => {
-    if (reservations.length === 0) dispatch(loadReservation());
+    if (reservations.length === 0) dispatch(loadReservation(auth));
     return () => null
   },[])
   return(
