@@ -7,6 +7,12 @@ Rails.application.routes.draw do
     resources 'restaurants', only: [ :index, :show ]
 
     resources :reservations
+
+    get '*page', to: 'static#index', constraints: ->(req) do
+      !req.xhr? && req.format.html?
+    end
+    
+    root 'static#index';
   
   end
 end
