@@ -5,7 +5,7 @@ class V1::AuthenticationController < ApplicationController
   def authenticate
     auth_token =
       AuthenticateUser.new(auth_params[:name], auth_params[:password_digest]).call
-    render json: { message: 'Successfully signed up', auth_token: auth_token }, status: 200
+    render json: { message: 'Successfully signed in', auth_token: auth_token }, status: 200
   end
 
   private

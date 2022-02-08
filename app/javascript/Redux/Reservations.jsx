@@ -6,6 +6,7 @@ const LOAD_RESERVATION = 'LOAD_RESERVATION'
 const CANCEL_RESERVATION = 'LOAD_RESERVATION'
 
 const initialState = {
+  reservations: [],
   Name: '',
   start_time: '',
   end_time: ''
@@ -40,7 +41,7 @@ export const loadReservation = () => async(dispatch) =>{
   const response = fetch(URL, {
     method: 'GET',
     headers: {
-      Authorization: `Bearer ${JSON.parse(localStorage.token)}`,
+      Authorization: `Bearer ${localStorage.token}`,
       Accept: 'application/json',
     },
   })
