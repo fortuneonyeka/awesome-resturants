@@ -40,8 +40,7 @@ export const loadReservation = () => async(dispatch) =>{
   const response = fetch(URL)
   const data = await response.json()
   const state = data.map((reservation) => ({
-    reservation_id: reservation.reservation_id,
-    resturant_name: reservation.name,
+    name: reservation.name,
     start_time: reservation.start_time,
     end_time: reservation.end_time,
   }));
