@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     post 'signup', to: 'users#create'
 
     
-    resources 'restaurant', only: [ :index, :show ]
+    resources 'restaurants', only: [ :index, :show ]
 
     resources :reservations
   
