@@ -13,7 +13,7 @@ const Reservations = () => {
   return(
     <div>
       <div>
-        <h2>Location</h2>
+        <h2>Restuarant</h2>
         <h2>Reservation Starts</h2>
         <h2>Reservation Ends</h2>
       </div>
@@ -21,7 +21,7 @@ const Reservations = () => {
       <div>
         {reservations.map((reservation) => (
           <ul key={reservation.reservation_id}>
-            <li>{user_id}</li>
+            <li>{resturant.name}</li>
             <li>{reservation.start_time}</li>
             <li>{reservation.end_time}</li>
             {' '}
