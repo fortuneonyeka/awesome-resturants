@@ -5,6 +5,7 @@ class V1::ReservationsController < ApplicationController
   def index
     @user = current_user
     @reservations = Reservation.where(user_id: @user.id)
+    render json: { reservations:@reservations }, status: 200
   end
 
   # GET /reservations/1 or /reservations/1.json

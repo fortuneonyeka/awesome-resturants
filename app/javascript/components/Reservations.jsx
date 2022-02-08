@@ -5,7 +5,7 @@ import { loadReservation } from '../Redux/Reservations';
 const Reservations = () => {
   const dispatch = useDispatch();
   const {auth} = useSelector((state => state.usersReducer))
-  const { reservations } = useSelector((state => state.reservationReducer));
+  const  reservations  = useSelector((state => state.reservationReducer)) || [];
   useEffect(() => {
     if (reservations.length === 0) dispatch(loadReservation(auth));
     return () => null
@@ -13,16 +13,15 @@ const Reservations = () => {
   return(
     <div>
       <div>
-        <h2>Reservation</h2>
+        <h2>Location</h2>
         <h2>Reservation Starts</h2>
         <h2>Reservation Ends</h2>
       </div>
 
       <div>
-        current_user
         {reservations.map((reservation) => (
           <ul key={reservation.reservation_id}>
-            <li>{reservation.name}</li>
+            <li>{user_id}</li>
             <li>{reservation.start_time}</li>
             <li>{reservation.end_time}</li>
             {' '}
