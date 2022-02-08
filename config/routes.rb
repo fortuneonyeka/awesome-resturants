@@ -3,7 +3,6 @@ Rails.application.routes.draw do
     post 'auth/login', to: 'authentication#authenticate'
     post 'signup', to: 'users#create'
 
-    
     resources 'restaurants', only: [ :index, :show ]
 
     resources :reservations
@@ -11,10 +10,8 @@ Rails.application.routes.draw do
     get '*page', to: 'static#index', constraints: ->(req) do
       !req.xhr? && req.format.html?
     end
-    
-    root 'static#index';
-  
   end
+  root 'static#index';
 end
 
 
