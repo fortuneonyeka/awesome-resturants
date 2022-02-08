@@ -19,11 +19,14 @@ const Reservations = () => {
       </div>
 
       <div>
+        current_user
         {Reservations.map((reservation) => (
           <ul key={reservation.reservation_id}>
             <li>{reservation.name}</li>
             <li>{reservation.start_time}</li>
             <li>{reservation.end_time}</li>
+            {' '}
+            { reservation.reserved? (<button>Cancel</button>) : ""}
           </ul>
         ))}
       </div>
