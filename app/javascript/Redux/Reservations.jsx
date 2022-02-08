@@ -37,7 +37,13 @@ export default (state = initialState, action) => {
 
 //actions creators
 export const loadReservation = () => async(dispatch) =>{
-  const response = fetch(URL)
+  const response = fetch(URL, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${JSON.parse(localStorage.token)}`,
+      Accept: 'application/json',
+    },
+  })
   const data = await response.json()
   const state = data.map((reservation) => ({
     name: reservation.name,
@@ -46,6 +52,7 @@ export const loadReservation = () => async(dispatch) =>{
   }));
   dispatch({ type: LOAD, state });
 }
+
 
 export const CreateReservation = (payload) => ({
   type: CREATE_RESERVATION,
