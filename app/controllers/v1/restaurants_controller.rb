@@ -1,4 +1,4 @@
-class RestaurantsController < ApplicationController
+class V1::RestaurantsController < ApplicationController
   def index
     @restaurants = Resturant.all
     render json: {
