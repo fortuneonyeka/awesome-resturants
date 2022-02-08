@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
+import { useDispatch } from 'react-redux';
+import { requestLogin } from '../Redux/users/usersReducer';
 import './form.css';
 
 const LogIn = () => {
     const [pass, setPass] = useState('');
     const [name, setName] = useState('');
-
+    const dispatch = useDispatch();
     const handleName = (e) => {
         e.stopPropagation();
         setName(e.target.value);
@@ -16,14 +18,15 @@ const LogIn = () => {
     }  
 
     const handleSubmit = (e) => {
-        // Replace by proper API requests
         e.preventDefault()
 
         const user = {
             name: name,
             password_digest: pass
         }
-        console.log(user);
+        
+        dispatch(requestLogin(user))
+
     }
 
     return(

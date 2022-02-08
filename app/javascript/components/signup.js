@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
+import { useDispatch } from 'react-redux';
+import { createUserFail, requestSignUp } from '../Redux/users/usersReducer';
 import './form.css';
 
 const SignUp = () => {
     const [pass, setPass] = useState('');
     const [name, setName] = useState('');
     const [confirm, setConfirm] = useState('');
-
+    const dispatch = useDispatch();
     const handleName = (e) => {
         e.stopPropagation();
         setName(e.target.value);
@@ -22,17 +24,17 @@ const SignUp = () => {
     }   
 
     const handleSubmit = (e) => {
-        // Replace by proper API requests
         e.preventDefault()
         if(confirm !== pass){
-            console.log('Confirmation invalid');
-            return null
+            dispatch(createUserFail("Password Confirmation doesn't match password"));return null;
         }
+
         const user = {
             name: name,
             password_digest: pass
         }
-        console.log(user);
+
+        dispatch(requestSignUp(user))
     }
 
     return(
