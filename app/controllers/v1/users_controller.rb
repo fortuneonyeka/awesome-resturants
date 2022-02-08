@@ -9,7 +9,7 @@ class V1::UsersController < ApplicationController
       response = { message: Message.account_created, auth_token: auth_token }
       render json: response, status: 200
     else
-      render json: { error: @user.errors}, status: 200
+      render json: { error: @user.errors }, status: 200
     end
   end
 
