@@ -1,16 +1,12 @@
-const URL = 'v1/reservations';
+const URL = '/v1/reservations';
 
 //Action types
 const CREATE_RESERVATION = 'LOAD_RESERVATION'
 const LOAD_RESERVATION = 'LOAD_RESERVATION'
 const CANCEL_RESERVATION = 'LOAD_RESERVATION'
 
-const initialState = {
-  reservations: [],
-  Name: '',
-  start_time: '',
-  end_time: ''
-}
+const initialState = []
+  
 
 //reducers
 export default (state = initialState, action) => {
@@ -18,18 +14,12 @@ export default (state = initialState, action) => {
     case  LOAD_RESERVATION:
       return action.state;
       case CREATE_RESERVATION: {
-        const newState = state.map((reservation) => {
-          if (reservation.reservation_id !== action.payload) return reservation;
-          return { ...reservation, reserved: true };
-        });
+        const newState = [...state, action.payload]
         return newState;
   }
     case CANCEL_RESERVATION: {
-      const newState = state.map((reservation) => {
-        if (reservation.reservation_id !== action.payload) return reservation;
-        return { ... reservation, reserved: false}
-      })
-      return newState
+      const newState = state.filter(reservation =>{reservation.id !== action.payload}) 
+        return newState
     }
     default:
       return state
@@ -37,21 +27,20 @@ export default (state = initialState, action) => {
 }
 
 //actions creators
-export const loadReservation = () => async(dispatch) =>{
-  const response = fetch(URL, {
+export const loadReservation = (auth) => async(dispatch) =>{
+  const response = await fetch(URL, {
     method: 'GET',
     headers: {
-      Authorization: `Bearer ${localStorage.token}`,
+      Authorization: `Bearer ${auth}`,
       Accept: 'application/json',
+      'Content-Type': 'application/json'
     },
   })
-  const data = await response.json()
-  const state = data.map((reservation) => ({
-    name: reservation.name,
-    start_time: reservation.start_time,
-    end_time: reservation.end_time,
-  }));
-  dispatch({ type: LOAD, state });
+  
+    const data = await response.json()
+    console.log(data);
+    const state = data.reservations
+    dispatch({ type: LOAD_RESERVATION, state });
 }
 
 

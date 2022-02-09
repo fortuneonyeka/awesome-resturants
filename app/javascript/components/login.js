@@ -8,8 +8,8 @@ const LogIn = () => {
     const [pass, setPass] = useState('');
     const [name, setName] = useState('');
 
-    const { auth } = useSelector(store => store.usersReducer);
-    if(auth){window.location.href = "/";}
+    // const { auth } = useSelector(store => store.usersReducer);
+    // if(auth){window.location.href = "/";}
 
     const dispatch = useDispatch();
     const handleName = (e) => {

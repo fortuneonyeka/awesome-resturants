@@ -8,8 +8,8 @@ const SignUp = () => {
     const [name, setName] = useState('');
     const [confirm, setConfirm] = useState('');
 
-    const { auth } = useSelector(store => store.usersReducer);
-    if(auth){window.location.href = "/test";}
+    // const { auth } = useSelector(store => store.usersReducer);
+    // if(auth){window.location.href = "/test";}
     const dispatch = useDispatch();
     const handleName = (e) => {
         e.stopPropagation();
