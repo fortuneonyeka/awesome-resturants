@@ -122,6 +122,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { requestRestaurants } from "../Redux/restaurants/restaurantsReducer";
 import Home from './Home';
 import { getUserLoginSuccess } from '../Redux/users/usersReducer';
+import Restaurant from "./Restaurant";
 
 
 const Main = () => {
@@ -144,7 +145,7 @@ const Main = () => {
       <Route path='/login' element = {<LogIn />}/>
       <Route path='/signup' element = {<SignUp />}/>
       {auth && <Route path='/reservations' element = {<Reservations />}/>}
-      {list && (list.map(restaurant =><Route key={restaurant.id} path={`/${restaurant.id}`} element = {<h1>{restaurant.name}</h1>}/>))}
+      {list && (list.map(restaurant =><Route key={restaurant.id} path={`/${restaurant.id}`} element = {<Restaurant restaurant_id={restaurant.id}/>}/>))}
     </Routes>
   </BrowserRouter>)
 }
