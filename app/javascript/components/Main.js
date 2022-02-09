@@ -144,7 +144,7 @@ const Main = () => {
       <Route path='/login' element = {<LogIn />}/>
       <Route path='/signup' element = {<SignUp />}/>
       {auth && <Route path='/reservations' element = {<Reservations />}/>}
-      {list && (list.map(restaurant =><Route path={`/${restaurant.id}`} element = {<h1>{restaurant.name}</h1>}/>))}
+      {list && (list.map(restaurant =><Route key={restaurant.id} path={`/${restaurant.id}`} element = {<h1>{restaurant.name}</h1>}/>))}
     </Routes>
   </BrowserRouter>)
 }

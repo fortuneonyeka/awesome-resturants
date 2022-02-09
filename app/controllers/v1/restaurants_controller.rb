@@ -7,5 +7,4 @@ class V1::RestaurantsController < ApplicationController
       restaurants: @restaurants
     }, status: 200
   end
-
 end

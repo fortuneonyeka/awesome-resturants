@@ -1,11 +1,10 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import NavigationPanel from "./NavigationPanel";
 import { Link } from "react-router-dom";
 
 const Home = (props) => {
     const {bool} = props
-    const dispatch = useDispatch();
 
     const { list } = useSelector(state => state.restaurantsReducer)
 
@@ -14,7 +13,16 @@ const Home = (props) => {
             <NavigationPanel auth={bool}/>
             <h1>OUR RESTAURANTS</h1>
             {list ?(
-                list.map((restaurant)=><Link to={`/${restaurant.id}`} key={restaurant.id}>{restaurant.name}</Link>)
+                list.map((restaurant)=>{
+                return (<div key={restaurant.id}> 
+                    <h2>{restaurant.name}</h2>
+                    <Link 
+                    to={`/${restaurant.id}`}>
+                    See Restaurant
+                    </Link>
+                </div>)
+               
+            })
             ):(<div>LOADING...</div>)}
         </div>
     )
