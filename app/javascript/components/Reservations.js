@@ -21,7 +21,7 @@ const Reservations = () => {
       <div>
         {reservations.map((reservation) => (
           <ul key={reservation.reservation_id}>
-            <li>{resturant.name}</li>
+            <li>Restaurant-Name</li>
             <li>{reservation.start_time}</li>
             <li>{reservation.end_time}</li>
             {' '}

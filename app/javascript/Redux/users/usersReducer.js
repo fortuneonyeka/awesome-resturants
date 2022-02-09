@@ -12,6 +12,8 @@ const GET_USER_LOGIN = 'redux/users/usersReducer/GET_USER_LOGIN'
 const GET_USER_LOGIN_SUCCESS = 'redux/users/usersReducer/GET_USER_LOGIN_SUCCESS'
 const GET_USER_LOGIN_FAIL = 'redux/users/usersReducer/GET_USER_LOGIN_FAIL'
 
+const LOGOUT = 'redux/users/usersReducer/LOGOUT'
+
 // Actions
 export const createUser = () => ({
     type: POST_CREATE_USER
@@ -43,7 +45,9 @@ export const getUserLoginSuccess = (message,auth) => ({
     auth
 })
 
-
+export const logOut = () => ({
+    type: LOGOUT
+})
 
 // Reducer
 
@@ -55,6 +59,7 @@ const usersReducer = (state = {}, action)=> {
         case GET_USER_LOGIN: return { ...state, logging:true }
         case GET_USER_LOGIN_FAIL: return {...state, logging: false, error: action.error}
         case GET_USER_LOGIN_SUCCESS: return {...state, logging:false, message: action.message, auth: action.auth, error: undefined}
+        case LOGOUT: return {...state, auth: undefined}
         default: return state
     }
 }

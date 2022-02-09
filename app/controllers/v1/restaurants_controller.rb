@@ -1,4 +1,6 @@
 class V1::RestaurantsController < ApplicationController
+  skip_before_action :authorize_request
+
   def index
     @restaurants = Resturant.all
     render json: {
@@ -6,10 +8,4 @@ class V1::RestaurantsController < ApplicationController
     }, status: 200
   end
 
-  def show
-    @restaurant = Resturant.find(params[:id])
-    render json: {
-      restaurant: @restaurant
-    }, status: 200
-  end
 end
