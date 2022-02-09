@@ -1,0 +1,24 @@
+
+
+li {
+  list-style: none;
+  font-size: "30px";
+  
+}
+
+.rest-conatiner {
+  display: flex;
+  justify-content: space-around;
+  margin-top:100px;
+}
+
+.rest-item {
+  padding: 10px;
+  margin: 10px;
+
+}
+
+li:nth-child(odd) {
+  background-color:rgb(221, 217, 217);
+  
+}

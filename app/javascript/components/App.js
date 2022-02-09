@@ -5,6 +5,7 @@ import LogIn from './login';
 import SignUp from './signup';
 import Reservations from './Reservations'
 import store from '../Redux/configureStore';
+import Restaurant from "./Restaurant";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path='/signup' element = {<SignUp />}/>
             <Route path='/reservations' element = {<Reservations />}/>
           </Routes>
+          <Restaurant />
         </BrowserRouter>
       </Provider>
     </div>
