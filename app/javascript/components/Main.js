@@ -113,28 +113,38 @@
 
 // export default Main;
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import LogIn from './login';
 import SignUp from './signup';
 import Reservations from './Reservations';
-import { useSelector } from 'react-redux';
-import NavigationPanel from './NavigationPanel'
+import { useDispatch, useSelector } from 'react-redux';
+import { requestRestaurants } from "../Redux/restaurants/restaurantsReducer";
 import Home from './Home';
+import { getUserLoginSuccess } from '../Redux/users/usersReducer';
 
 
 const Main = () => {
   const { auth } = useSelector(store => store.usersReducer)
   const bool = auth ? true : false;
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+    const auth = sessionStorage.getItem('auth')
+    if(auth){dispatch(getUserLoginSuccess('Logged In',auth))}
+    dispatch(requestRestaurants())
+  },[])
+
+  const { list } = useSelector(state =>state.restaurantsReducer)
 
   return(
   <BrowserRouter>
-    <NavigationPanel auth={bool}/>
     <Routes>
-      <Route exact path='/' element = {<Home />}/>
+      <Route exact path='/' element = {<Home bool={bool} />}/>
       <Route path='/login' element = {<LogIn />}/>
       <Route path='/signup' element = {<SignUp />}/>
       {auth && <Route path='/reservations' element = {<Reservations />}/>}
+      {list && (list.map(restaurant =><Route path={`/${restaurant.id}`} element = {<h1>{restaurant.name}</h1>}/>))}
     </Routes>
   </BrowserRouter>)
 }

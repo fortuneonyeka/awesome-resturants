@@ -81,6 +81,7 @@ export const requestLogin = (user) => async(dispatch) =>{
     })
     .then(response => response.json())
     .then(data =>{
+        sessionStorage.setItem('auth',data['auth_token'])
        dispatch(getUserLoginSuccess(data.message, data['auth_token']))
     })
     .catch(e => dispatch(getUserLoginFail(e)))
@@ -100,6 +101,9 @@ dispatch(createUser())
     .then(response => response.json())
     .then(data =>{
         if(data.error){dispatch(createUserFail(data.error))}
-        else{dispatch(createUserSuccess(data.message, data['auth_token']))}
+        else{
+            sessionStorage.setItem('auth',data['auth_token'])
+            dispatch(createUserSuccess(data.message, data['auth_token']))
+        }
     })
 }

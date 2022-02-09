@@ -66,6 +66,7 @@ const NavigationPanel = (props) => {
   const dispatch = useDispatch()
   const handleLogout = (e) => {
     e.preventDefault();
+    sessionStorage.removeItem('auth')
     dispatch(logOut())
   }
   return(
