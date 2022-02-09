@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { loadReservation } from '../Redux/Reservations';
+import NavigationPanel from './NavigationPanel';
 
 const Reservations = () => {
   const dispatch = useDispatch();
@@ -12,6 +13,7 @@ const Reservations = () => {
   },[])
   return(
     <div>
+      <NavigationPanel auth={bool}/>
       <div>
         <h2>Restuarant</h2>
         <h2>Reservation Starts</h2>
