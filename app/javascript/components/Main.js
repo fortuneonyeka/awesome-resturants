@@ -7,7 +7,7 @@ import {
   Link,
   useRouteMatch,
 } from 'react-router-dom';
-import './carousel.css';
+// import style from './carousel.css';
 import { Carousel } from 'react-responsive-carousel';
 
 

@@ -5,6 +5,7 @@ import LogIn from './login';
 import SignUp from './signup';
 import Reservations from './Reservations'
 import store from '../Redux/configureStore';
+import Main from './Main';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <NavLink to='/reservations'>Reservations</NavLink>
           </nav>
           <Routes>
+            <Route exact path='/' element={<Main/>}/>
             <Route path='/login' element = {<LogIn />}/>
             <Route path='/signup' element = {<SignUp />}/>
             <Route path='/reservations' element = {<Reservations />}/>
