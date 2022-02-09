@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { createUserFail, requestSignUp } from '../Redux/users/usersReducer';
 import './form.css';
@@ -9,7 +10,8 @@ const SignUp = () => {
     const [confirm, setConfirm] = useState('');
 
     const { auth } = useSelector(store => store.usersReducer);
-    if(auth){window.location.href = "/test";}
+    if(auth){window.location.href = "/";}
+
     const dispatch = useDispatch();
     const handleName = (e) => {
         e.stopPropagation();
@@ -54,6 +56,11 @@ const SignUp = () => {
 
                 <button type='submit'>Sign Up</button>
             </div>
+            <div>
+                <Link to='/login'>Or Log in instead</Link>
+                <Link to='/'>Back</Link>
+            </div>
+            
         </form>
     )
 }

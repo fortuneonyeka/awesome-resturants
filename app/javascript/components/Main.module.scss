@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 90vh;
+  // align-items: center;
+
+  h1,
+  h2 {
+    padding: 0;
+    text-align: center;
+    color: black;
+  }
+
+  & > p {
+    text-align: center;
+    color: #b9b9b9;
+    font-weight: bold;
+    padding-bottom: 100px;
+  }
+
+  .carousel li > div {
+    display: flex;
+    gap: 150px;
+    text-align: center;
+    justify-content: center;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 250px;
+      gap: 10px;
+    }
+  }
+
+  @media (min-width: 800px) {
+    margin-left: 270px;
+  }
+}
+
+.restaurantImage {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
