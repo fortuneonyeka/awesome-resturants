@@ -9,21 +9,25 @@ const Home = (props) => {
     const { list } = useSelector(state => state.restaurantsReducer)
 
     return(
-        <div>
+        <div className="container">
             <NavigationPanel auth={bool}/>
-            <h1>OUR RESTAURANTS</h1>
-            {list ?(
-                list.map((restaurant)=>{
-                return (<div key={restaurant.id}> 
-                    <h2>{restaurant.name}</h2>
-                    <Link 
-                    to={`/${restaurant.id}`}>
-                    See Restaurant
-                    </Link>
-                </div>)
-               
-            })
-            ):(<div>LOADING...</div>)}
+            <div className="inner-container">
+                <h1>OUR RESTAURANTS</h1>
+                <div className="carousel">
+                    {list ?(
+                    list.map((restaurant)=>{
+                    return (<div key={restaurant.id} className="rest-card"> 
+                        <h2>{restaurant.name}</h2>
+                        <Link 
+                        to={`/${restaurant.id}`}>
+                        See Restaurant
+                        </Link>
+                    </div>)
+                
+                })
+                ):(<div>LOADING...</div>)}
+                </div>
+            </div>
         </div>
     )
 }

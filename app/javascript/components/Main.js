@@ -145,7 +145,8 @@ const Main = () => {
       <Route path='/login' element = {<LogIn />}/>
       <Route path='/signup' element = {<SignUp />}/>
       {auth && <Route path='/reservations' element = {<Reservations />}/>}
-      {list && (list.map(restaurant =><Route key={restaurant.id} path={`/${restaurant.id}`} element = {<Restaurant restaurant_id={restaurant.id}/>}/>))}
+      {list && (list.map(restaurant =><Route key={restaurant.id} path={`/${restaurant.id}`} element = {<Restaurant restaurant_id={restaurant.id} auth={auth}/>}/>))}
+      <Route path='/reserve' element={<div>Welcome{sessionStorage.getItem('restaurant')}</div>}/>
     </Routes>
   </BrowserRouter>)
 }

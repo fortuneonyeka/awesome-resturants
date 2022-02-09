@@ -1,0 +1,54 @@
+html, body {
+    min-height: 100vh;
+    margin: 0;
+}
+.container {
+    width: 75vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar {
+    height: 97vh;
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    position: relative;
+}
+
+.inner-container {
+    height: 100vh;
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel{
+    height: 20vh;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+}
+
+.rest-card {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+img {
+    max-width: 300px;
+}
+
+.restaurant {
+    display: flex;
+    flex-direction: row;
+}

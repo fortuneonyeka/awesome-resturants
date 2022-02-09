@@ -70,7 +70,7 @@ const NavigationPanel = (props) => {
     dispatch(logOut())
   }
   return(
-    <nav>
+    <nav className="navbar">
       <NavLink to='/'>Restaurants</NavLink>
       {!auth && <NavLink to='/login'>Log In</NavLink>}
       {!auth && <NavLink to='/signup'>Sign Up</NavLink>}
