@@ -7,12 +7,7 @@ html, body {
     font-weight: 700;
     font-style: normal;
 }
-.container {
-    width: 75vw;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: row;
-}
+
 
 .navbar {
     height: 97vh;
@@ -35,17 +30,12 @@ html, body {
     font-size: 30px;
 }
 
-.inner-container {
-    height: 100vh;
-    width: 75vw;
-    display: flex;
-    flex-direction: column;
-    margin-left: 50px;
-}
+
 
 .name {
     font-size: 15px;
     font-weight: 900;
+    margin-left: 10px;
 }
 
 .carousel{
@@ -68,13 +58,13 @@ html, body {
 }
 
 img {
-    max-width: 300px;
-    max-height: 200px;
+    width: 700px;
+    height: 600px;
     border-radius:5px;
 }
 
 .tinypic {
-    max-width: 180px;
+    max-width: 300px;
 }
 
 .restaurant {
@@ -95,20 +85,22 @@ img {
 
 .res-head{
     text-align: center;
-    margin-top: 50px;
+ margin-top: 50px;
 }
 
 .see-res {
     font-size: 15px;
     list-style: none;
     text-decoration: none;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    text-align: center;
+    margin-left: 10px;
     border-radius: 5px;
-    padding: 5px;
+    padding: px;
 }
 
 svg {
-    padding: 10px;
+    padding: 5px;
     gap: 20px;
 }
 /* .nagivate-btn {

@@ -15,11 +15,25 @@ const NavigationPanel = (props) => {
     <nav className="navbar">
         <h1 className="logo">AWR</h1>
       <div className="navigate">
-        <NavLink to='/'>Restaurants</NavLink>
+        <NavLink to='/' style={({ isActive }) =>
+    isActive
+      ? {
+          color: '#fff',
+          background: '#7600dc',
+        }
+      : { color: '#545e6f', background: '#f0f0f0' }
+  }>Restaurants</NavLink>
         {!auth && <NavLink to='/login'>Log In</NavLink>}
         {!auth && <NavLink className="btn"  to='/signup'>Sign Up</NavLink>}
         {auth && <button className="nagivate-btn"  type='button' onClick={e=> handleLogout(e)} >Log Out</button>}
-        {auth && <NavLink to='/reservations'>Reservations</NavLink>}
+        {auth && <NavLink to='/reservations' style={({ isActive }) =>
+    isActive
+      ? {
+          color: '#fff',
+          background: '#7600dc',
+        }
+      : { color: '#545e6f', background: '#f0f0f0' }
+  }>Reservations</NavLink>}
       </div>
       <div className="social">
         <div className="svg">
