@@ -23,7 +23,12 @@ class V1::ReservationsController < ApplicationController
 
   # POST /reservations or /reservations.json
   def create
-    @reservation = Reservation.new(reservation_params)
+    @reservation = Reservation.new(
+      user_id: current_user.id,
+      resturant_id: params[:resturant_id],
+      start_time: params[:start_time],
+      end_time: params[:end_time]
+    )
     if @reservation.save
       render json: { message: 'Reservation created successfully' }, status: :created
     else
@@ -45,9 +50,8 @@ class V1::ReservationsController < ApplicationController
   # DELETE /reservations/1 or /reservations/1.json
   def destroy
     @reservation.destroy
-    respond_to do |_format|
-      render json: { message: 'Reservation deleted successfully' }, status: :ok
-    end
+
+    render json: { message: 'Reservation deleted successfully' }, status: :ok
   end
 
   private
@@ -58,7 +62,7 @@ class V1::ReservationsController < ApplicationController
   end
 
   # Only allow a list of trusted parameters through.
-  def reservation_params
-    params.require(:reservation).permit(:name, :start_time, :end_time, :user_id)
-  end
+  # def reservation_params
+  #   params.require(:reservation).permit(:start_time, :end_time, :resturant_id)
+  # end
 end

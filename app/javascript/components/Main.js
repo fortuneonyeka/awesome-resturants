@@ -123,6 +123,7 @@ import { requestRestaurants } from "../Redux/restaurants/restaurantsReducer";
 import Home from './Home';
 import { getUserLoginSuccess } from '../Redux/users/usersReducer';
 import Restaurant from "./Restaurant";
+import ReserveForm from './ReserveForm';
 
 
 const Main = () => {
@@ -146,7 +147,9 @@ const Main = () => {
       <Route path='/signup' element = {<SignUp />}/>
       {auth && <Route path='/reservations' element = {<Reservations />}/>}
       {list && (list.map(restaurant =><Route key={restaurant.id} path={`/${restaurant.id}`} element = {<Restaurant restaurant_id={restaurant.id} auth={auth}/>}/>))}
-      <Route path='/reserve' element={<div>Welcome{sessionStorage.getItem('restaurant')}</div>}/>
+      <Route path='/reserve' element={
+      <ReserveForm restaurant={JSON.parse(sessionStorage.getItem('restaurant'))} />
+      }/>
     </Routes>
   </BrowserRouter>)
 }
