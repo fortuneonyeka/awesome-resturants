@@ -1,5 +1,5 @@
 import React from 'react';
-import './restaurant.css';
+import './styles/restaurant.css';
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import NavigationPanel from './NavigationPanel';
@@ -17,7 +17,7 @@ const Restaurant = (props) => {
       <div className="inner-container">
           <div className='restaurant'>
             <div className="rest-image">
-                <img src="https://img.theculturetrip.com/wp-content/uploads/2018/03/1950222.jpg" alt="Restaurant 1 Image" />
+                <img src={restaurant.image} alt="Restaurant Image" />
             </div>
             <div className="rest-details">
               <h3 style={{marginLeft:"50px", marginBottom: "20px"}}>{restaurant.name}</h3>
