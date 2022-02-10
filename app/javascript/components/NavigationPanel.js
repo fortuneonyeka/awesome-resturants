@@ -21,6 +21,7 @@ const NavigationPanel = (props) => {
         {!auth && <NavLink to='/signup'>Sign Up</NavLink>}
         {auth && <button type='button' onClick={e=> handleLogout(e)} >Log Out</button>}
         {auth && <NavLink to='/reservations'>Reservations</NavLink>}
+        {auth && <NavLink to='/new-restaurant'>Add a Restaurant</NavLink>}
       </div>
       <div className="social">
         <div className="svg">
