@@ -23,7 +23,6 @@ class V1::ReservationsController < ApplicationController
 
   # POST /reservations or /reservations.json
   def create
-
     @reservation = Reservation.new(
       user_id: current_user.id,
       resturant_id: params[:resturant_id],
@@ -35,7 +34,6 @@ class V1::ReservationsController < ApplicationController
     else
       render json: { errors: @reservation.errors }, status: :unprocessable_entity
     end
-    
   end
 
   # PATCH/PUT /reservations/1 or /reservations/1.json
@@ -53,8 +51,7 @@ class V1::ReservationsController < ApplicationController
   def destroy
     @reservation.destroy
 
-      render json: { message: 'Reservation deleted successfully' }, status: :ok
-
+    render json: { message: 'Reservation deleted successfully' }, status: :ok
   end
 
   private
