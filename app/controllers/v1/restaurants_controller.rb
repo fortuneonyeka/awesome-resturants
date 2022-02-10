@@ -17,6 +17,12 @@ class V1::RestaurantsController < ApplicationController
       render json: {errors: @restaurant.errors}, status: 422
     end
   end
+
+  def destroy
+    Resturant.find(params[:id]).destroy
+
+    render json: { message: 'Restaurant deleted successfully' }, status: :ok
+  end
   
   private
   
