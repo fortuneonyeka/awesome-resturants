@@ -23,17 +23,18 @@ const ReserveForm = () => {
       start_date,
       resturant_id,
     };
-    dispatch(reservations(data));
-    redirect('/reservation');
+    // dispatch(reservations(data));
+    // redirect('/reservation');
+    console.log(data)
   };
 
   return (
     <>
       <form onSubmit={(e) => handleSubmit(e)}>
-        <Wrapper>
-          <DateContainer>
-            <Label htmlFor="start">Start Date :</Label>
-            <Input
+        <div>
+          <div>
+            <label htmlFor="start">Start Date :</label>
+            <input
               type="datetime"
               id="start"
               name="start_date"
@@ -48,9 +49,9 @@ const ReserveForm = () => {
               }}
               required
             />
-          </DateContainer>
+          </div>
           
-        </Wrapper>
+        </div>
         <button type={submit}>
           Reserve
         </button>
