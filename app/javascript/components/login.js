@@ -3,13 +3,14 @@ import { useDispatch } from 'react-redux';
 import { requestLogin } from '../Redux/users/usersReducer';
 import { useSelector } from 'react-redux';
 import './form.css';
+import { Link } from 'react-router-dom';
 
 const LogIn = () => {
     const [pass, setPass] = useState('');
     const [name, setName] = useState('');
-
-    // const { auth } = useSelector(store => store.usersReducer);
-    // if(auth){window.location.href = "/";}
+    
+    const { auth } = useSelector(store => store.usersReducer);
+    if(auth){window.location.href = "/";}
 
     const dispatch = useDispatch();
     const handleName = (e) => {
@@ -44,6 +45,10 @@ const LogIn = () => {
                 <input type="password" id="password" name="password" onChange={e=>handlePass(e)} minLength={4}/>
 
                 <button type='submit'>Log In</button>
+            </div>
+            <div>
+                <Link to='/signup'>Or sign up instead</Link>
+                <Link to='/'>Back</Link>
             </div>
         </form>
     )
