@@ -1,19 +1,14 @@
 import React from 'react';
 import './restaurant.css';
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import NavigationPanel from './NavigationPanel';
 
 const Restaurant = (props) => {
-  // const resturant = "Tantalizer"
-  // const start_time = "10/02/2022"
-  // const end_time = "11/02/2022"
 
   const {restaurant_id, auth} = props
   const { list } = useSelector(state =>state.restaurantsReducer)
   const restaurant = list.filter(rest=>rest.id === restaurant_id)[0]
-  console.log(auth);
   
   return (
   
@@ -35,7 +30,7 @@ const Restaurant = (props) => {
         {auth && <Link to="/reserve" 
         onClick={e=>{
           e.preventDefault
-          sessionStorage.setItem('restaurant', restaurant.id)
+          sessionStorage.setItem('restaurant', JSON.stringify(restaurant))
         }}>
           Make a reservation
           </Link> } 
