@@ -12,15 +12,15 @@ const Home = (props) => {
         <div className="container">
             <NavigationPanel auth={bool}/>
             <div className="inner-container">
-                <h1>OUR RESTAURANTS</h1>
+                <h1 className="res-head">OUR RESTAURANTS</h1>
                 <div className="carousel">
                     {list ?(
                     list.map((restaurant)=>{
                     return (<div key={restaurant.id} className="rest-card"> 
                         <img className="tinypic" src={restaurant.image} alt="Restaurant 1 Image" />
                         <div className="card-inner">
-                            <h2>{restaurant.name}</h2>
-                            <Link 
+                            <h2 className="name">{restaurant.name}</h2>
+                            <Link className="see-res"
                             to={`/${restaurant.id}`}>
                             See Restaurant
                             </Link>

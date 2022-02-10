@@ -1,6 +1,11 @@
+@import url("https://use.typekit.net/ten3ztt.css");
+
 html, body {
     min-height: 100vh;
     margin: 0;
+    font-family: acumin-pro,sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 .container {
     width: 75vw;
@@ -11,17 +16,23 @@ html, body {
 
 .navbar {
     height: 97vh;
-    width: 20vw;
+    width: 15vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 20px;
     padding: 10px;
     position: relative;
+    background-color: rgb(245, 239, 239);
+    color: red;
 }
 
 .navigate{
     display: flex;
     flex-direction: column;
+    gap: 50px;
+    margin-bottom: 100%;
+    font-size: 30px;
 }
 
 .inner-container {
@@ -29,6 +40,12 @@ html, body {
     width: 75vw;
     display: flex;
     flex-direction: column;
+    margin-left: 50px;
+}
+
+.name {
+    font-size: 15px;
+    font-weight: 900;
 }
 
 .carousel{
@@ -52,6 +69,8 @@ html, body {
 
 img {
     max-width: 300px;
+    max-height: 200px;
+    border-radius:5px;
 }
 
 .tinypic {
@@ -66,5 +85,34 @@ img {
 .card-inner {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    gap: 40px;
 }
+
+.logo {
+    color:indigo
+}
+
+.res-head{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.see-res {
+    font-size: 15px;
+    list-style: none;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+svg {
+    padding: 10px;
+    gap: 20px;
+}
+/* .nagivate-btn {
+    width: 50%;
+    height: 50%;
+    display: block;
+} */
