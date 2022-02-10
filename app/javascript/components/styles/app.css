@@ -11,12 +11,17 @@ html, body {
 
 .navbar {
     height: 97vh;
-    width: 25vw;
+    width: 20vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 10px;
     position: relative;
+}
+
+.navigate{
+    display: flex;
+    flex-direction: column;
 }
 
 .inner-container {
@@ -27,7 +32,7 @@ html, body {
 }
 
 .carousel{
-    height: 20vh;
+    height: 35vh;
     width: 100%;
     overflow-x: scroll;
     overflow-y: hidden;
@@ -37,18 +42,29 @@ html, body {
 }
 
 .rest-card {
-    height: 100%;
+    height: 85%;
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
+    margin: 10px;
 }
 
 img {
     max-width: 300px;
 }
 
+.tinypic {
+    max-width: 180px;
+}
+
 .restaurant {
     display: flex;
     flex-direction: row;
+}
+
+.card-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
