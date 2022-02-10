@@ -17,11 +17,14 @@ const Home = (props) => {
                     {list ?(
                     list.map((restaurant)=>{
                     return (<div key={restaurant.id} className="rest-card"> 
-                        <h2>{restaurant.name}</h2>
-                        <Link 
-                        to={`/${restaurant.id}`}>
-                        See Restaurant
-                        </Link>
+                        <img className="tinypic" src={restaurant.image} alt="Restaurant 1 Image" />
+                        <div className="card-inner">
+                            <h2>{restaurant.name}</h2>
+                            <Link 
+                            to={`/${restaurant.id}`}>
+                            See Restaurant
+                            </Link>
+                        </div>
                     </div>)
                 
                 })

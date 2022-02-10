@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { createUserFail, requestSignUp } from '../Redux/users/usersReducer';
-import './form.css';
+import './styles/form.css';
 
 const SignUp = () => {
     const [pass, setPass] = useState('');
