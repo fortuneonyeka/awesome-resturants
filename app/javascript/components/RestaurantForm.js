@@ -60,7 +60,7 @@ const RestaurantForm = () => {
             <input type='text' id="image" name='image' placeholder="Enter an image URL" onChange={e=>handleChange(e)}/>
             <button type='submit'>Create Restaurant</button>
             </div>
-            <Link to='/'> Back </Link>
+            <Link to='/'><p className='link'>Back</p></Link>
 
         </form>
     </div>

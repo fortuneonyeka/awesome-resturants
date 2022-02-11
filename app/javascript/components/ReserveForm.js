@@ -1,9 +1,10 @@
 /* eslint-disable camelcase */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
 import { addReservation } from '../Redux/Reservations';
+import './styles/form.css'
 
 const ReserveForm = (props) => {
 
@@ -55,21 +56,22 @@ const ReserveForm = (props) => {
     <>
       <form onSubmit={(e) => handleSubmit(e)}>
         <h2>Make a Reservation for {restaurant.name}</h2>
-        <div>
-          <div>
+        <div id='form-body'>
+
             <label htmlFor="start">Start Date :</label>
-            <input 
+            <input className=''
             onChange={
               e=>handleChange(e)}
             type="datetime-local" id="start"
             min={today}
             name="start"/>
-          </div>
-          
+
+          <button type='submit'>
+            Reserve
+          </button>
+
         </div>
-        <button type='submit'>
-          Reserve
-        </button>
+        <Link className='link' to={`/${restaurant.id}`}><p className='link'>Back</p></Link>
       </form>
     </>
   );
