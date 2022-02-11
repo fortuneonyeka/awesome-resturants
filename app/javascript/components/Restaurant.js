@@ -1,15 +1,21 @@
 import React from 'react';
 import './styles/restaurant.css';
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import NavigationPanel from './NavigationPanel';
+import { removeRestaurant } from '../Redux/restaurants/restaurantsReducer';
 
 const Restaurant = (props) => {
-
+  const dispatch = useDispatch()
+  const redirect = useNavigate()
   const {restaurant_id, auth} = props
   const { list } = useSelector(state =>state.restaurantsReducer)
   const restaurant = list.filter(rest=>rest.id === restaurant_id)[0]
-  
+  const handleRemove=(e)=>{
+    e.preventDefault()
+    dispatch(removeRestaurant(restaurant_id))
+    redirect('/')
+  }
   return (
   
     <div className='container'>
@@ -34,6 +40,8 @@ const Restaurant = (props) => {
         }}>
           Make a reservation
           </Link> } 
+
+          {auth && <button type='logout' onClick={e=>handleRemove(e)}>Remove Restaurant</button> } 
         </div>        
     </div>
   )

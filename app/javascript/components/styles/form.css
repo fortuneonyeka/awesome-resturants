@@ -30,9 +30,17 @@ form {
     margin-left: 10%;
     font-size: 26px
 }
-#form-body > input {
+#form-body > input, #form-body > textarea {
     width: 79%;
     margin-left: 10%;
     margin-top: 2px;
     font-size: 20px;
+}
+.container {
+    width: 100vw;
+    margin: 0;
+}
+.restaurant-form {
+    margin-left: 15%;
+    width: 70vw;
 }

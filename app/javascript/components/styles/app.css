@@ -3,7 +3,7 @@ html, body {
     margin: 0;
 }
 .container {
-    width: 75vw;
+    width: 100vw;
     min-height: 100vh;
     display: flex;
     flex-direction: row;
