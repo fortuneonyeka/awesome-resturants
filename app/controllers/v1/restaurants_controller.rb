@@ -9,12 +9,12 @@ class V1::RestaurantsController < ApplicationController
   end
 
   def create
-    @restaurant = Resturant.new( restaurant_params )
+    @restaurant = Resturant.new(restaurant_params)
 
     if @restaurant.save
-      render json: {message: "Restaurant has been created"}, status: 200
+      render json: { message: 'Restaurant has been created' }, status: 200
     else
-      render json: {errors: @restaurant.errors}, status: 422
+      render json: { errors: @restaurant.errors }, status: 422
     end
   end
 
@@ -23,12 +23,10 @@ class V1::RestaurantsController < ApplicationController
 
     render json: { message: 'Restaurant deleted successfully' }, status: :ok
   end
-  
+
   private
-  
+
   def restaurant_params
     params.require(:restaurant).permit(:name, :description, :rating, :image, :location)
   end
-
 end
-
