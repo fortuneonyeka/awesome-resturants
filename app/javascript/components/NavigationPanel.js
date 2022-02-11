@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logOut } from "../Redux/users/usersReducer";
+
 const NavigationPanel = (props) => {
   const { auth } = props
   const dispatch = useDispatch()
@@ -12,16 +13,49 @@ const NavigationPanel = (props) => {
   }
   return(
     <nav className="navbar">
-      <div className="logo">
-        <h1>Awesome Restaurants</h1>
-      </div>
+        <h1 className="logo">AWR</h1>
       <div className="navigate">
-        <NavLink to='/'>Restaurants</NavLink>
-        {!auth && <NavLink to='/login'>Log In</NavLink>}
-        {!auth && <NavLink to='/signup'>Sign Up</NavLink>}
-        {auth && <button type='button' onClick={e=> handleLogout(e)} >Log Out</button>}
-        {auth && <NavLink to='/reservations'>Reservations</NavLink>}
-        {auth && <NavLink to='/new-restaurant'>Add a Restaurant</NavLink>}
+        <NavLink to='/' style={({ isActive }) =>
+    isActive
+      ? {color: 'green', textDecoration: 'none',background: '#f0f0f0'}
+      : { textDecoration: 'none',color: '#545e6f', background: '#f0f0f0' }
+  }>Restaurants</NavLink>
+        {!auth && <NavLink to='/login' style={({ isActive }) =>
+    isActive
+      ? {
+          color: 'green',
+          textDecoration: 'none',background: '#f0f0f0'
+         
+          
+        }
+      : { color: '#545e6f', background: '#f0f0f0',textDecoration:'none' }
+  }>Log In</NavLink>}
+        {!auth && <NavLink className="btn"  to='/signup' 
+        style={({ isActive }) =>
+    isActive
+      ? {
+          color:'green',
+          textDecoration: 'none',background: '#f0f0f0'
+          
+        }
+      : { color: '#545e6f', background: '#f0f0f0', textDecoration:'none' }
+  }>Sign Up</NavLink>}
+       
+        {auth && <NavLink to='/reservations' style={({ isActive }) =>
+    isActive
+      ? {
+          color:'green', 
+          textDecoration: 'none',background: '#f0f0f0'
+        }
+      : { color: '#545e6f', background: '#f0f0f0', textDecoration:'none' }
+  } >Reservations</NavLink>}
+   {auth && <button className="nagivate-btn"  type='button' onClick={e=> handleLogout(e)}>Log Out</button>}
+   {auth && <NavLink to='/new-restaurant' style={({ isActive }) =>
+    isActive
+      ? {color: 'green', textDecoration: 'none',background: '#f0f0f0'}
+      : { textDecoration: 'none',color: '#545e6f', background: '#f0f0f0' }
+  }>Add a Restaurant</NavLink>}
+
       </div>
       <div className="social">
         <div className="svg">

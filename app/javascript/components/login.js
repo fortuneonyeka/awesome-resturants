@@ -47,8 +47,10 @@ const LogIn = () => {
                 <button type='submit'>Log In</button>
             </div>
             <div>
+
                 <Link to='/signup'><p className='link'>Or sign up instead</p></Link>
                 <Link to='/'><p className='link'>Back</p></Link>
+
             </div>
         </form>
     )
