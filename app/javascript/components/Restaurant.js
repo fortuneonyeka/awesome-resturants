@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/restaurant.css';
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import NavigationPanel from './NavigationPanel';
 import { removeRestaurant } from '../Redux/restaurants/restaurantsReducer';
@@ -26,22 +26,30 @@ const Restaurant = (props) => {
                 <img src={restaurant.image} alt="Restaurant Image" />
             </div>
             <div className="rest-details">
-              <h3 style={{marginLeft:"50px", marginBottom: "20px"}}>{restaurant.name}</h3>
+              <h2 style={{marginLeft:"50px", marginBottom: "20px"}}>{restaurant.name}</h2>
                 <ul className="rest-ul">
                   <li className="rest-item">Description: {restaurant.description}</li>
+                  <li className="rest-item">Location: {restaurant.location}</li>
+                  <li className="rest-item">Rating: {restaurant.rating}/5</li>
                 </ul>
-                <p>{restaurant.rating}</p>
             </div>
           </div>
-        {auth && <Link to="/reserve" 
+        {auth && <NavLink to="/reserve" style={({ isActive }) =>
+    isActive
+      ? {
+          color: 'green',
+          background: '#7600dc',
+        }
+      : { color: '#545e6f',background: '#fff' }
+  }
         onClick={e=>{
           e.preventDefault
           sessionStorage.setItem('restaurant', JSON.stringify(restaurant))
         }}>
-          Make a reservation
-          </Link> } 
+          <button className="reserve">Reserve A Table</button>
+          </NavLink> } 
+          {auth && <button className="remove-rest" type='logout' onClick={e=>handleRemove(e)}>Remove Restaurant</button> } 
 
-          {auth && <button type='logout' onClick={e=>handleRemove(e)}>Remove Restaurant</button> } 
         </div>        
     </div>
   )

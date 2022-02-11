@@ -29,8 +29,8 @@ const Main = () => {
   <BrowserRouter>
     <Routes>
       <Route exact path='/' element = {<Home bool={bool} />}/>
-      <Route path='/login' element = {<LogIn />}/>
-      <Route path='/signup' element = {<SignUp />}/>
+      <Route className="nagivate-btn" path='/login' element = {<LogIn />}/>
+      <Route className="nagivate-btn" path='/signup' element = {<SignUp />}/>
       {auth && <Route path='/reservations' element = {<Reservations />}/>}
       {auth && <Route path='/new-restaurant' element = {<RestaurantForm />}/>}
       {list && (list.map(restaurant =><Route key={restaurant.id} path={`/${restaurant.id}`} element = {<Restaurant restaurant_id={restaurant.id} auth={auth}/>}/>))}

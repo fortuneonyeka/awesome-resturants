@@ -57,7 +57,7 @@ const SignUp = () => {
                 <button type='submit'>Sign Up</button>
             </div>
             <div>
-                <Link to='/login'>Or Log in instead</Link>
+                <Link to='/login' >Or Log in instead</Link>
                 <Link to='/'>Back</Link>
             </div>
             
