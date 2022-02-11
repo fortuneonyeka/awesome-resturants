@@ -17,6 +17,13 @@
     - Node.JS
     - VSCode
     - Git & GitHub
+
+## Kanban-Board Link 
+[link](https://github.com/fortuneonyeka/awesome-resturants/projects) to kanban board
+
+## Kanban-Board Image
+![kanban](https://user-images.githubusercontent.com/44624138/153588062-9911a336-a88d-4b4e-b03b-01f2270fd931.png)
+.
 <!-- 
 ## Live Demo (if available)
 
