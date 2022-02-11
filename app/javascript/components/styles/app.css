@@ -1,0 +1,141 @@
+@import url("https://use.typekit.net/ten3ztt.css");
+
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: acumin-pro,sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.navbar {
+    height: 97vh;
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px;
+    position: relative;
+    background-color: rgb(245, 239, 239);
+}
+
+.navigate{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-bottom: 100%;
+    font-size: 30px;
+}
+
+.nagivate:hover {
+    background-color: green;
+}
+
+
+
+.name {
+    font-size: 15px;
+    font-weight: 900;
+    margin-left: 10px;
+}
+
+.carousel{
+    height: 35vh;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+}
+
+.rest-card {
+    height: 85%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+img {
+    max-width: 700px;
+    /* height: 600px; */
+    border-radius:5px;
+   padding-left: 40px;
+   padding-top: 20px;
+
+}
+
+.tinypic {
+    max-width: 300px;
+}
+
+.restaurant {
+    display: flex;
+    flex-direction: row;
+}
+
+.card-inner {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    gap: 40px;
+}
+
+.logo {
+    color:indigo
+}
+
+.reservation-details {
+    font-size: 20px;
+    padding: 100px;
+    background-color: rgb(162, 228, 162);
+  }
+
+  .reserve-list {
+    border-radius: 10px;
+  }
+
+  .cancel-btn {
+    margin-left: 30%;
+    margin-top: 100px;
+    font-size: 20px;
+    padding: 10px;
+    width: 40%;
+    border-radius:20px;
+    border-width:0;
+    font-size: 24px;
+  }
+
+  .cancel-btn:hover {
+    background-color: red;
+  }
+  
+
+.res-head{
+    text-align: center;
+ margin-top: 50px;
+}
+
+.see-res {
+    font-size: 15px;
+    list-style: none;
+    text-decoration: none;
+    /* border: 1px solid black; */
+    text-align: center;
+    margin-left: 10px;
+    border-radius: 5px;
+    padding: px;
+}
+
+svg {
+    padding: 5px;
+    gap: 20px;
+}
+/* .nagivate-btn {
+    width: 50%;
+    height: 50%;
+    display: block;
+} */
