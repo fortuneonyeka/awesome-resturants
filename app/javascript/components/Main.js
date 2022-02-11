@@ -9,6 +9,7 @@ import Home from './Home';
 import { getUserLoginSuccess } from '../Redux/users/usersReducer';
 import Restaurant from "./Restaurant";
 import ReserveForm from './ReserveForm';
+import RestaurantForm from './RestaurantForm';
 
 
 const Main = () => {
@@ -31,7 +32,7 @@ const Main = () => {
       <Route path='/login' element = {<LogIn />}/>
       <Route path='/signup' element = {<SignUp />}/>
       {auth && <Route path='/reservations' element = {<Reservations />}/>}
-      {auth && <Route path='/new-restaurant' element = {<div>New Restaurant</div>}/>}
+      {auth && <Route path='/new-restaurant' element = {<RestaurantForm />}/>}
       {list && (list.map(restaurant =><Route key={restaurant.id} path={`/${restaurant.id}`} element = {<Restaurant restaurant_id={restaurant.id} auth={auth}/>}/>))}
       <Route path='/reserve' element={
       <ReserveForm restaurant={JSON.parse(sessionStorage.getItem('restaurant'))} />
