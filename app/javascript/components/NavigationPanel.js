@@ -50,7 +50,11 @@ const NavigationPanel = (props) => {
       : { color: '#545e6f', background: '#f0f0f0', textDecoration:'none' }
   } >Reservations</NavLink>}
    {auth && <button className="nagivate-btn"  type='button' onClick={e=> handleLogout(e)}>Log Out</button>}
-   {auth && <NavLink to='/new-restaurant'>Add a Restaurant</NavLink>}
+   {auth && <NavLink to='/new-restaurant' style={({ isActive }) =>
+    isActive
+      ? {color: 'green', textDecoration: 'none',background: '#f0f0f0'}
+      : { textDecoration: 'none',color: '#545e6f', background: '#f0f0f0' }
+  }>Add a Restaurant</NavLink>}
 
       </div>
       <div className="social">

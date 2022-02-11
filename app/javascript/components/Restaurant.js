@@ -48,7 +48,7 @@ const Restaurant = (props) => {
         }}>
           <button className="reserve">Reserve A Table</button>
           </NavLink> } 
-          {auth && <button type='logout' onClick={e=>handleRemove(e)}>Remove Restaurant</button> } 
+          {auth && <button className="remove-rest" type='logout' onClick={e=>handleRemove(e)}>Remove Restaurant</button> } 
 
         </div>        
     </div>

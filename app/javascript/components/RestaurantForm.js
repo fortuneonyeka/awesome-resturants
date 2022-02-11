@@ -43,20 +43,20 @@ const RestaurantForm = () => {
     <div className="container">
         <form className="restaurant-form" onSubmit={e=>handleSubmit(e)}>
             <h2>Add your Restaurant</h2>
-            <div id="form-body">
-            <label htmlFor="name">Name :</label>
+            <div id="add-form">
+            <label htmlFor="name">Name</label>
             <input type='text' id="name" name='name' placeholder="Enter your Restaurnat name" onChange={e=>handleChange(e)}/>
 
-            <label htmlFor="description">Description :</label>
+            <label htmlFor="description">Description</label>
             <textarea name="description" maxLength={500} id="description" onChange={e=>handleChange(e)} placeholder='Tell us about your restaurant'/>
 
-            <label htmlFor="location">Address :</label>
+            <label htmlFor="location">Address</label>
             <input type='text' id="location" name='location' placeholder="Enter your business location" onChange={e=>handleChange(e)}/>
 
-            <label htmlFor="rating">Rating :</label>
+            <label htmlFor="rating">Rating</label>
             <input type='number' id="rating" name='rating' min={1} max={5} onChange={e=>handleChange(e)}/>
 
-            <label htmlFor="image">Image URL :</label>
+            <label htmlFor="image">Image URL</label>
             <input type='text' id="image" name='image' placeholder="Enter an image URL" onChange={e=>handleChange(e)}/>
             <button type='submit'>Create Restaurant</button>
             </div>
