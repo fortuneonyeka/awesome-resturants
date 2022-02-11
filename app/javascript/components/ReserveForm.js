@@ -1,76 +1,73 @@
 /* eslint-disable camelcase */
-import React from 'react';
+import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useState } from 'react';
-import { addReservation } from '../Redux/Reservations';
+import reservations from '../components/Reservations'
 
-const ReserveForm = (props) => {
-
-  const [date, setDate] = useState(new Date());
-
-  const { restaurant } = props
-
-  var today = new Date();
-  var dd = today.getDate();
-  var mm = today.getMonth()+1;
-  var yyyy = today.getFullYear();
-  var hh = today.getHours();
-  var min = today.getMinutes();
-  if(dd<10){
-    dd='0'+dd
-  } 
-  if(mm<10){
-    mm='0'+mm
-  }
-  if(hh<10){
-    hh='0'+hh
-  }
-  if(min<10){
-    min='0'+min
-  }
-  today = yyyy+'-'+mm+'-'+dd+'T'+hh+':'+min;
+const ReserveForm = () => {
+  const [minDate, setMinDate] = useState(new Date().toISOString().split('T')[0]);
+  const [maxDate, setMaxDate] = useState(new Date());
+  const startDate = new Date().toISOString().split('T')[0];
 
   const dispatch = useDispatch();
   const redirect = useNavigate();
+  const { resturant_id } = useParams();
 
-  const handleChange = (e) => {
-    e.stopPropagation()
-    setDate(e.target.value)
-  }
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+    const select = document.querySelector('select').value;
+    const start_date = document.querySelector('#start').value;
     const data = {
-      start_time: new Date(Date.parse(date)),
-      end_time: new Date(Date.parse(date)+3600000),
-      resturant_id: restaurant.id,
+      start_date,
+      resturant_id,
     };
-
-    dispatch(addReservation(data, sessionStorage.getItem('auth')));
-    redirect('/reservations')
+    dispatch(reservations(data));
+    redirect('/reservation');
   };
 
   return (
     <>
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <h2>Make a Reservation for {restaurant.name}</h2>
-        <div>
-          <div>
-            <label htmlFor="start">Start Date :</label>
-            <input 
-            onChange={
-              e=>handleChange(e)}
-            type="datetime-local" id="start"
-            min={today}
-            name="start"/>
-          </div>
+    <div className="container">
+    <h1 className="form-title">BOOK A RESTAURANT HERE TODAY</h1>
+    <div className="baar" />
+            <p className="description">
+              Welcome to Awesome Restaurant,with us be rest assured to book the best restaurant for your "DINNER, COFFEE CHAT, MEET UP and so on". Reservation is just a click away😉👍.
+            </p>
+      <form className="reserve-form" onSubmit={(e) => handleSubmit(e)}>
+      <div className="reserve-wrapper">
+                <div className="reserve-date">
+        <Wrapper>
+          <DateContainer>
+            <Label htmlFor="start">Start Date :</Label>
+            <Input
+              type="datetime"
+              id="start"
+              name="start_date"
+              defaultValue={startDate}
+              min={startDate}
+              max={maxDate}
+              onChange={(e) => {
+                const parseDate = new Date(e.target.value);
+                parseDate.setDate(parseDate.getDate() + 1);
+                const date = parseDate.toISOString().split('T')[0];
+                setMinDate(date);
+              }}
+              required
+            />
+          </DateContainer>
           
+        </Wrapper>
         </div>
-        <button type='submit'>
+        </div>
+        <div className="reserve-btn">
+        <button className="btn" type={submit}>
           Reserve
         </button>
+        </div>
       </form>
+      </div>
     </>
   );
 };

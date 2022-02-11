@@ -1,0 +1,99 @@
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #97bf11;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.form-title {
+  font-weight: 500;
+  font-size: 24px;
+  padding-bottom: 10px;
+}
+
+.baar {
+  width: 55%;
+  height: 1px;
+  background-color: #fff;
+}
+
+.description {
+  line-height: 35px;
+  width: 75%;
+  text-align: center;
+  margin: 0 40px;
+  padding: 20px 0;
+}
+
+.reserve-form {
+  justify-content: space-between;
+  box-shadow: 0 0 10px rgb(0 0 0 / 56%);
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 10px;
+}
+
+.reserve-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+.reserve-date label {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.reserve-date input {
+  outline: none;
+  width: 80%;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #97bf11;
+  padding: 0 10px;
+}
+
+.reserve-btn button {
+  width: 130px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #97bf11;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+
+.reserve-btn button:hover {
+  color: #fff;
+  border: 1px solid #fff;
+  background-color: #97bf11;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .form-title {
+    font-size: 19px;
+    padding-bottom: 10px;
+  }
+
+  .description {
+    line-height: 30px;
+    width: 65%;
+    text-align: center;
+    margin: 0 30px;
+    font-size: 17px;
+  }
+}
