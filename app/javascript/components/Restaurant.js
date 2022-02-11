@@ -32,7 +32,7 @@ const Restaurant = (props) => {
         {auth && <NavLink to="/reserve" style={({ isActive }) =>
     isActive
       ? {
-          color: '#fff',
+          color: 'green',
           background: '#7600dc',
         }
       : { color: '#545e6f',background: '#fff' }
@@ -41,7 +41,7 @@ const Restaurant = (props) => {
           e.preventDefault
           sessionStorage.setItem('restaurant', JSON.stringify(restaurant))
         }}>
-          <button className="reserve">Make a reservation</button>
+          <button className="reserve">Reserve A Table</button>
           </NavLink> } 
         </div>        
     </div>

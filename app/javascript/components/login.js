@@ -47,7 +47,7 @@ const LogIn = () => {
                 <button type='submit'>Log In</button>
             </div>
             <div>
-                <Link to='/signup'>Or sign up instead</Link>
+                <Link to='/signup' >Or sign up instead</Link>
                 <Link to='/'>Back</Link>
             </div>
         </form>

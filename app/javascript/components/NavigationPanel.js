@@ -17,23 +17,38 @@ const NavigationPanel = (props) => {
       <div className="navigate">
         <NavLink to='/' style={({ isActive }) =>
     isActive
-      ? {
-          color: '#fff',
-          background: '#7600dc',
-        }
-      : { color: '#545e6f', background: '#f0f0f0' }
+      ? {color: 'green', textDecoration: 'none',background: '#f0f0f0'}
+      : { textDecoration: 'none',color: '#545e6f', background: '#f0f0f0' }
   }>Restaurants</NavLink>
-        {!auth && <NavLink to='/login'>Log In</NavLink>}
-        {!auth && <NavLink className="btn"  to='/signup'>Sign Up</NavLink>}
-        {auth && <button className="nagivate-btn"  type='button' onClick={e=> handleLogout(e)} >Log Out</button>}
+        {!auth && <NavLink to='/login' style={({ isActive }) =>
+    isActive
+      ? {
+          color: 'green',
+          textDecoration: 'none',background: '#f0f0f0'
+         
+          
+        }
+      : { color: '#545e6f', background: '#f0f0f0',textDecoration:'none' }
+  }>Log In</NavLink>}
+        {!auth && <NavLink className="btn"  to='/signup' 
+        style={({ isActive }) =>
+    isActive
+      ? {
+          color:'green',
+          textDecoration: 'none',background: '#f0f0f0'
+          
+        }
+      : { color: '#545e6f', background: '#f0f0f0', textDecoration:'none' }
+  }>Sign Up</NavLink>}
+        {auth && <button className="nagivate-btn"  type='button' onClick={e=> handleLogout(e)}>Log Out</button>}
         {auth && <NavLink to='/reservations' style={({ isActive }) =>
     isActive
       ? {
-          color: '#fff',
-          background: '#7600dc',
+          color:'green', 
+          textDecoration: 'none',background: '#f0f0f0'
         }
-      : { color: '#545e6f', background: '#f0f0f0' }
-  }>Reservations</NavLink>}
+      : { color: '#545e6f', background: '#f0f0f0', textDecoration:'none' }
+  } >Reservations</NavLink>}
       </div>
       <div className="social">
         <div className="svg">

@@ -31,11 +31,11 @@ const Reservations = () => {
         <ul>
           {reservations.map((reservation) => (
               <li key={reservation.id}>
-                <div>
+                <div className="reservation-details">
                   <h2>{list.filter(rest=>rest.id === reservation.resturant_id)[0].name}</h2>
                   <p>Reservation time:{`${new Date(reservation.start_time)}`}</p>
                   <p>Estimated end time:{`${new Date(reservation.end_time)}`}</p>
-                  <button type='button' onClick={e=>handleCancel(e,reservation.id)}>Cancel</button>
+                  <button className="cancel-btn" type='button' onClick={e=>handleCancel(e,reservation.id)}>Cancel Reservation</button>
                 </div>
               </li>
             ))}
