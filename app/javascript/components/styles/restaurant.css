@@ -2,22 +2,14 @@
 
 li {
   list-style: none;
-  font-size: "30px";
-  
+  font-size: "30px"; 
 }
-
-/* .res-conatiner {
-  display: flex;
-  justify-content: space-around;
-  margin-top:50%;
-} */
 
 .container {
   width: 90vw;
   min-height: 100vh;
   display: flex;
   flex-direction: row;
-  /* margin-top: 10%; */
 }
 
 .inner-container {
@@ -64,10 +56,6 @@ li {
 .res-link1:hover {
   background-color:rgb(173, 221, 60) ;
 }
-
-/* .reserve:hover {
-  background-color: transparent;
-} */
 
 li:nth-child(odd) {
   background-color:rgb(221, 217, 217);

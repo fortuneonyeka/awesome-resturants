@@ -30,7 +30,7 @@ const Reservations = () => {
       <div className='inner-container'>
         <ul>
           {reservations.map((reservation) => (
-              <li key={reservation.id}>
+              <li className="reserve-list" key={reservation.id}>
                 <div className="reservation-details">
                   <h2>{list.filter(rest=>rest.id === reservation.resturant_id)[0].name}</h2>
                   <p>Reservation time:{`${new Date(reservation.start_time)}`}</p>

@@ -40,7 +40,7 @@ const NavigationPanel = (props) => {
         }
       : { color: '#545e6f', background: '#f0f0f0', textDecoration:'none' }
   }>Sign Up</NavLink>}
-        {auth && <button className="nagivate-btn"  type='button' onClick={e=> handleLogout(e)}>Log Out</button>}
+       
         {auth && <NavLink to='/reservations' style={({ isActive }) =>
     isActive
       ? {
@@ -49,6 +49,7 @@ const NavigationPanel = (props) => {
         }
       : { color: '#545e6f', background: '#f0f0f0', textDecoration:'none' }
   } >Reservations</NavLink>}
+   {auth && <button className="nagivate-btn"  type='button' onClick={e=> handleLogout(e)}>Log Out</button>}
       </div>
       <div className="social">
         <div className="svg">
