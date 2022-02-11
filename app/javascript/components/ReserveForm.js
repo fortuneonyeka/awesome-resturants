@@ -40,7 +40,7 @@ const ReserveForm = (props) => {
     setDate(e.target.value)
   }
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.stopPropagation();
     
     const data = {
       start_time: new Date(Date.parse(date)),
@@ -64,7 +64,8 @@ const ReserveForm = (props) => {
               e=>handleChange(e)}
             type="datetime-local" id="start"
             min={today}
-            name="start"/>
+            name="start"
+            required/>
 
           <button type='submit'>
             Reserve

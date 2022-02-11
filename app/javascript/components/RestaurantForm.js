@@ -25,7 +25,7 @@ const RestaurantForm = () => {
         }
     }
     const handleSubmit=(e)=>{
-        e.preventDefault()
+        e.stopPropagation()
 
         const data = {
             name,
@@ -40,30 +40,30 @@ const RestaurantForm = () => {
     }
 
     return(
-    <div className="container">
+
         <form className="restaurant-form" onSubmit={e=>handleSubmit(e)}>
             <h2>Add your Restaurant</h2>
-            <div id="add-form">
-            <label htmlFor="name">Name</label>
-            <input type='text' id="name" name='name' placeholder="Enter your Restaurnat name" onChange={e=>handleChange(e)}/>
+            <div id="form-body">
+            <label htmlFor="name">Name :</label>
+            <input type='text' id="name" name='name' placeholder="Enter your Restaurnat name" onChange={e=>handleChange(e)} required/>
 
-            <label htmlFor="description">Description</label>
-            <textarea name="description" maxLength={500} id="description" onChange={e=>handleChange(e)} placeholder='Tell us about your restaurant'/>
+            <label htmlFor="description">Description :</label>
+            <textarea name="description" maxLength={500} id="description" onChange={e=>handleChange(e)} placeholder='Tell us about your restaurant' required/>
 
-            <label htmlFor="location">Address</label>
-            <input type='text' id="location" name='location' placeholder="Enter your business location" onChange={e=>handleChange(e)}/>
+            <label htmlFor="location">Address :</label>
+            <input type='text' id="location" name='location' placeholder="Enter your business location" onChange={e=>handleChange(e)} required/>
 
-            <label htmlFor="rating">Rating</label>
-            <input type='number' id="rating" name='rating' min={1} max={5} onChange={e=>handleChange(e)}/>
+            <label htmlFor="rating">Rating :</label>
+            <input type='number' id="rating" name='rating' min={1} max={5} onChange={e=>handleChange(e)} required/>
 
-            <label htmlFor="image">Image URL</label>
-            <input type='text' id="image" name='image' placeholder="Enter an image URL" onChange={e=>handleChange(e)}/>
+            <label htmlFor="image">Image URL :</label>
+            <input type='text' id="image" name='image' placeholder="Enter an image URL" onChange={e=>handleChange(e)} required/>
             <button type='submit'>Create Restaurant</button>
             </div>
             <Link to='/'><p className='link'>Back</p></Link>
 
         </form>
-    </div>
+
     )
 }
 

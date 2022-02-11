@@ -46,21 +46,19 @@ const SignUp = () => {
         <form onSubmit={e=>handleSubmit(e)}>
             <div id='form-body'>
                 <label >Name:</label>
-                <input type="text" id="Name" name="Name" onChange={e=>handleName(e)} minLength={2} maxLength={20}/>
+                <input type="text" id="Name" name="Name" onChange={e=>handleName(e)} minLength={2} maxLength={20} required/>
 
                 <label >Password:</label>
-                <input type="password" id="password" name="password" onChange={e=>handlePass(e)} minLength={4}/>
+                <input type="password" id="password" name="password" onChange={e=>handlePass(e)} minLength={4} required/>
 
                 <label >Confirm Password:</label>
-                <input type="password" id="confirm" name="confirm" onChange={e=>handleConfirm(e)}/>
+                <input type="password" id="confirm" name="confirm" onChange={e=>handleConfirm(e)} required/>
 
                 <button type='submit'>Sign Up</button>
             </div>
             <div>
-
                 <Link to='/login'><p className='link'>Or Log in instead</p></Link>
                 <Link to='/'><p className='link'>Back</p></Link>
-
             </div>
             
         </form>

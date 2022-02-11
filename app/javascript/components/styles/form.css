@@ -2,6 +2,7 @@ form {
     width: 100%;
     display: flex;
     flex-direction: column;
+    height: 100vh;
     align-items: center;
     justify-content: space-around;
     background: url(https://d3aux7tjp119y2.cloudfront.net/original_images/Tak2-CMSTemplate_IrMZHla.jpg);
@@ -15,18 +16,11 @@ form {
     display: flex;
     flex-direction: column;
     align-items: baseline;
-    gap: 50px;
-    /* justify-content: space-between; */
-    height: 50%;
-
-    border:1px solid black;
-
-}
-
-input {
+    justify-content: space-between;
+    border-radius: 10px;
     padding: 10px;
     width: 55%;
-    background-color: rgba(88, 248, 88, 0.5);
+    background-color: rgba(88, 248, 88, 0.5);;
 }
 
 #form-body > button {
@@ -38,13 +32,16 @@ input {
 }
 #form-body > label {
     margin-left: 10%;
-    font-size: 26px
+    font-size: 26px;
+    margin: 5px;
 }
 #form-body > input, #form-body > textarea {
-    width: 79%;
+    width: 93%;
     margin-left: 10%;
     margin-top: 2px;
     font-size: 20px;
+    padding: 10px;
+    margin: 5px;
 }
 
 .container {
@@ -53,8 +50,7 @@ input {
 }
 
 .restaurant-form {
-    margin-left: 15%;
-    width: 70vw;
+    width: 100vw;
 }
 
 .link {
