@@ -1,0 +1,62 @@
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-around;
+    background: url(https://d3aux7tjp119y2.cloudfront.net/original_images/Tak2-CMSTemplate_IrMZHla.jpg);
+    background-size: cover;
+    background-color: rgb(88, 248, 88);
+    background-blend-mode: multiply;
+    color: white;
+}
+
+#form-body {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 10px;
+    width: 55%;
+    background-color: rgba(88, 248, 88, 0.5);;
+}
+
+#form-body > button {
+    align-self: center;
+    width: 80%;
+    font-size: 26px;
+    border-radius: 10px;
+    border-width: 0;
+}
+#form-body > label {
+    margin-left: 10%;
+    font-size: 26px;
+    margin: 5px;
+}
+#form-body > input, #form-body > textarea {
+    width: 93%;
+    margin-left: 10%;
+    margin-top: 2px;
+    font-size: 20px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.container {
+    width: 100vw;
+    margin: 0;
+}
+
+.restaurant-form {
+    width: 100vw;
+}
+
+.link {
+    color: black;
+    text-decoration: none !important; 
+}
+.link:hover {
+    color: white;
+}
